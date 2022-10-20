@@ -4,6 +4,18 @@ import os
 
 clear = lambda: os.system('cls')
 
+def createSet():
+    print(0)
+
+def reviewSet():
+    print(0)
+
+def editSet():
+    print(0)
+
+def deleteSet():
+    print(0)
+
 def getChoice():
     while True:
         try:
@@ -28,6 +40,7 @@ def menu():
 (4) Delete a flashcard set""")
     
     choice = getChoice()
+    
     clear()
 
 
