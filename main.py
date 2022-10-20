@@ -1,4 +1,9 @@
 # main.py
+
+import os
+
+clear = lambda: os.system('cls')
+
 def getChoice():
     while True:
         try:
@@ -11,17 +16,20 @@ def getChoice():
             continue
         else:
             break
+    clear()
     return choice
 
 def menu():
     choice = 0
     print("What would you like to do?")
-    print("""   (1) Create a new flashcard set
-        (2) Review a flashcard set
-        (3) Edit a flashcard set
-        (4) Delete a flashcard set""")
+    print("""(1) Create a new flashcard set
+(2) Review a flashcard set
+(3) Edit a flashcard set
+(4) Delete a flashcard set""")
     
     choice = getChoice()
+    clear()
+
 
 
 print("Welcome to Flashcard Maker!")
