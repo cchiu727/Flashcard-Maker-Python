@@ -4,6 +4,12 @@ import os
 
 clear = lambda: os.system('cls')
 
+def printSet(name, set):
+    print(f"{name}:")
+    for id, term, definition in set:
+        print(f"({id})\t{term}:\t{definition}")
+    input("Press Enter to continue...")
+
 def createSet():
     choice = True
     counter = 1
@@ -23,8 +29,7 @@ def createSet():
         counter += 1
         clear()
 
-    #input("Press Enter to continue...")
-    # export set to csv 
+    printSet(setName, set)
     
 
 def reviewSet():
@@ -78,6 +83,6 @@ def menu():
 
 
 print("Welcome to Flashcard Maker!")
-exitFlag = 0
-while exitFlag != 5:
-    menu()
+flag = menu()
+while flag != 5:
+    flag = menu()
