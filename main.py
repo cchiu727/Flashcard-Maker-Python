@@ -5,7 +5,27 @@ import os
 clear = lambda: os.system('cls')
 
 def createSet():
-    print(0)
+    choice = True
+    counter = 1
+    set = []
+
+    setName = input("Enter the name for your set: ")
+    while choice == True:
+        term = input(f"{counter} - Enter your term: ")
+        definition = input("Enter your definition: ")
+        cont = input("Would you like to add another term? (y/n): ")
+        print(cont) # DEBUGGING
+        if cont == "y":
+            choice = True
+        elif cont == "n":
+            choice = False
+        set.append([counter, term, definition])
+        counter += 1
+        clear()
+
+    #input("Press Enter to continue...")
+    # export set to csv 
+    
 
 def reviewSet():
     print(0)
@@ -29,6 +49,7 @@ def getChoice():
         else:
             break
     clear()
+
     return choice
 
 def menu():
@@ -41,7 +62,7 @@ def menu():
 (5) Exit""")
     
     choice = getChoice()
-    
+    clear()
     if choice == 1:
         createSet()
     elif choice == 2:
@@ -51,10 +72,12 @@ def menu():
     elif choice == 4:
         deleteSet()
     else:
-        exit()
+        return 5
     clear()
 
 
 
 print("Welcome to Flashcard Maker!")
-menu()
+exitFlag = 0
+while exitFlag != 5:
+    menu()
