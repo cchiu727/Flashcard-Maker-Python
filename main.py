@@ -23,7 +23,7 @@ def getChoice():
         except ValueError:
             print("Invalid choice.")
             continue
-        if choice not in (1, 2, 3, 4):
+        if choice not in (1, 2, 3, 4, 5):
             print("Invalid choice.")
             continue
         else:
@@ -37,10 +37,21 @@ def menu():
     print("""(1) Create a new flashcard set
 (2) Review a flashcard set
 (3) Edit a flashcard set
-(4) Delete a flashcard set""")
+(4) Delete a flashcard set
+(5) Exit""")
     
     choice = getChoice()
     
+    if choice == 1:
+        createSet()
+    elif choice == 2:
+        reviewSet()
+    elif choice == 3:
+        editSet()
+    elif choice == 4:
+        deleteSet()
+    else:
+        exit()
     clear()
 
 
